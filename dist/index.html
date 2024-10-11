@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stikkman UX
+    
+  </title>
+  <link rel="stylesheet" href="/src/styles/output.css">
+ <style>
+  
+  
+.dragging {
+  animation: dragUp 2s forwards;
+}
+
+@keyframes dragUp {
+  to {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+ </style>
+</head>
+<body class="min-h-screen bg-[#212D2D]">
+    <div class="relative w-full h-screen container overflow-hidden">
+        <video class="absolute top-0 left-0 min-w-full h-full object-cover" autoplay loop muted>
+          <source src="/src/video/foggy.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <!--overlay on background video-->
+        <div class="absolute top-0 left-0 min-w-full min-h-full insert-0 bg-gradient-to-b from-transparent to-[#212D2D] opacity-100"></div>
+        <div class="relative z-10">
+          <div class="flex justify-center">
+            <img class="pt-5" src="/src/assets/Group 38.svg">
+          </div>
+          <p class="flex justify-center text-xs ml-8">LOREM, IPSUM</p>
+          <div class="font-athelas text-white font-extralight text-xl flex justify-center pt-32">
+            <p class="tracking-[2px]">A LOREM IPSUM<br><span class="ml-12 italic tracking-wide">in </span> LOREM IPSUM</p>
+          </div>
+          <div class="flex justify-center pt-[66px]">
+            <img class="w-10 h-10 rounded-full" src="/src/assets/pexels-107014568-9725478img.svg" alt="Profile Image">
+          </div>
+          <p class="text-xs text-white flex justify-center font-light">lorem by</p>
+          <p class="text-sm font-semibold text-white flex justify-center">Lorem & Ipsum lorem</p>
+          <div class="flex justify-center pt-4">
+            <button class="flex border bg-white bg-opacity-20 rounded-3xl py-2 px-2">
+              <a class="flex text-white text-md border-r-2 border-neutral-300 px-2 pr-2" href=""><img class="px-1"
+                  src="/src/assets/icon.svg">LOREM</a>
+              <a class="flex text-white text-md px-2 pr-2" href=""><img class="px-1" src="/src/assets/Phone.svg">IPSUM</a>
+            </button>
+          </div>
+          <p class="flex justify-center pt-2 tracking-wider text-white text-xs">27 <img class="px-2"
+              src="/src/assets/weather_snowy.svg"> lorem</p>
+          <div class="flex justify-center pt-4">
+            <img src="/src/assets/line.svg">
+          </div>
+        </div>
+      </div>
+
+  <div class="h-screen flex flex-col justify-center relative overflow-hidden">
+    <!-- Page 1 content -->
+    <div id="page1" class="bg-[#212D2D] h-screen transition-opacity duration-500">
+      <div class="flex justify-center relative">
+        <img class="absolute" src="/src/assets/line2.svg">
+      </div>
+      <div class="flex pl-8 pt-7">
+        <icon class="py-3"><img src="/src/assets/iconmenu.svg"></icon>
+        <logo class="ml-12 w-32"><img src="/src/assets/Group 39logo white.svg"></logo>
+      </div>
+      <div class="font-athelas text-white font-extralight text-md pt-40">
+        <p class="flex justify-center tracking-[2px]">LOREM INTO IPSUM</p>
+        <p class="flex justify-center tracking-[2px]">A LOREM<span class="italic tracking-wide mx-2">in </span>
+          THE
+          IPSUM</p>
+      </div>
+      <div class="flex justify-center relative">
+        <img id="image1" src="/src/assets/image1.png" alt="VR Image"
+          class="rounded-2xl w-[280px] h-[248px] cursor-pointer">
+      </div>
+      <div class="absolute inset-x-0 bottom-10 flex justify-center">
+        <button class="flex border bg-white bg-opacity-20 rounded-2xl py-1 mx-2">
+          <a class="flex text-white text-sm border-r-2 px-1" href=""><img class="px-1"
+              src="/src/assets/icon.svg">LOREM</a>
+          <a class="flex text-white text-sm px-1" href=""><img class="px-1" src="/src/assets/Phone.svg">IPSUM</a>
+        </button>
+      </div>
+    </div>
+
+    <!-- Page 2 content -->
+    <div id="page2"
+      class="bg-[url('/src/assets/paper.png')] transition-opacity duration-500 opacity-0 hidden w-full h-full absolute top-0 left-0">
+      <div class="relative">
+        <img id="image2" class="object-cover rounded-lg w-96 h-96 transition-all duration-500 transform"
+          src="/src/assets/image 2.png" alt="VR Image">
+        <div class="flex pl-8 pt-2 absolute inset-0">
+          <icon class="py-3"><img src="/src/assets/iconmenu.svg"></icon>
+          <logo class="ml-12 w-32"><img src="/src/assets/Group 39logo white.svg"></logo>
+        </div>
+      </div>
+      <div class="mt-4 text-center flex">
+        <h2 class="text-xs text-black font-athelas">A Lorem for The Ipsum</h2>
+        <p class="text-black container border-l border-black text-xs mx-2 pl-5 pr-2">A Lorem for the ipsum, A lorem for
+          the ipsum.</p>
+      </div>
+      <div class="absolute inset-x-0 bottom-10 flex justify-center mt-6">
+        <button class="flex border bg-[#212D2D] bg-opacity-40 rounded-2xl py-2 mx-2 mt-10 ml-60">
+          <a class="flex text-white text-sm border-r-2 px-1" href=""><img class="px-1"
+              src="/src/assets/menugreen.svg"></a>
+          <a class="flex text-white text-sm px-1" href=""><img class="px-1" src="/src/assets/phonegreen.svg"></a>
+        </button>
+      </div>
+    </div>
+    <!-- Page 3 content -->
+    <div id="page3" class="bg-[#212D2D] h-screen transition-opacity duration-500 hidden">
+      <div class="flex pl-8 pt-7">
+        <icon class="py-3"><img src="/src/assets/iconmenu.svg"></icon>
+        <logo class="ml-12 w-32"><img src="/src/assets/Group 39logo white.svg"></logo>
+      </div>
+
+      <div class="text-white font-extralight pt-10">
+        <p class="text-xs pb-3 flex justify-center font-athelas">LOREM OF</p>
+        <p class="flex justify-center tracking-wide txt-xl font-semibold font-athelas">LOREM <span
+            class="italic px-2">of</span> IPSUM</p>
+        <p class="flex justify-center font-smibold text-sm px-4 text-center">A Lorem ipsum, A Lorem ipsum, A
+          Lorem ipsum, A Lorem ipsum, A Lorem ipsum, A Lorem ipsum.</p>
+        <p class="flex justify-center font-smibold text-sm px-4 pt-5 text-center">A Lorem ipsum, A Lorem ipsum,
+          A Lorem ipsum, A Lorem ipsum, A Lorem ipsum, A Lorem ipsum.</p>
+      </div>
+
+      <div class="flex justify-center pt-10 relative">
+        <img id="image3" src="/src/assets/cotton.png" alt="VR Image"
+          class="rounded-2xl w-[200px] h-[200px] cursor-pointer">
+        <div class="absolute inset-x-0 bottom-6 flex justify-center">
+          <button class="flex border bg-white bg-opacity-40 rounded-2xl py-2 mx-2 mt-10 ml-60">
+            <a class="flex text-white text-sm border-r-2 px-1" href=""><img class="px-1"
+                src="/src/assets/menugreen.svg"></a>
+            <a class="flex text-white text-sm px-1" href=""><img class="px-1" src="/src/assets/phonegreen.svg"></a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 4 content -->
+    <div id="page4"
+      class="bg-[#212D2D] transition-opacity duration-500 opacity-0 hidden w-full h-full absolute top-0 left-0">
+      <div class="relative">
+        <img id="image4" class="object-cover rounded-lg w-[350px] h-96 transition-all duration-500 transform"
+          src="/src/assets/cotton.png" alt="VR Image">
+        <div class="flex pl-8 pt-2 absolute inset-0 ">
+          <icon class="py-3"><img src="/src/assets/iconmenu.svg"></icon>
+          <logo class="ml-12 w-32"><img src="/src/assets/Group 39logo white.svg"></logo>
+        </div>
+        <div class="absolute inset-0 ml-[165px] mt-[340px]">
+          <button class="h-6 rounded flex bg-white opacity-80">
+            <img class="w-6 h-6" src="/src/assets/bed.svg">
+            <p class="text-sm px-1 py-[2px]">LOREMLOREM</p>
+          </button>
+        </div>
+      </div>
+      <div class="mt-2 text-center bg-[url] flex">
+        <h2 class="text-xs text-white pl-2">A Lorem in Ipsum</h2>
+        <div class="text-white container border-l border-white text-xs ">
+          <p class="">A Lorem for the ipsum.</p>
+          <p class="">A Lorem for the ipsum.</p>
+          <p class="">A Lorem for the ipsum.</p>
+          <p class="">A Lorem for the ipsum.</p>
+        </div>
+      </div>
+      <button class="flex border bg-white bg-opacity-40 rounded-2xl py-2 mx-2 mt-6 ml-60">
+        <a class="flex text-white text-sm border-r-2 px-1" href=""><img class="px-1"
+            src="/src/assets/menugreen.svg"></a>
+        <a class="flex text-white text-sm px-1" href=""><img class="px-1" src="/src/assets/phonegreen.svg"></a>
+      </button>
+    </div>
+  </div>
+</body>
+<script src="/dist/main.js"></script>
+
+</html>
